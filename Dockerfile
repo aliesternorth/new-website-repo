@@ -1,7 +1,7 @@
 FROM node:18-alpine AS base
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --legacy-peer-deps
 
 FROM base AS build
 COPY . .
